@@ -1,0 +1,13 @@
+# Secrets — never commit
+.env
+
+# Runtime outputs
+repo_analysis/
+planning-results/
+
+# Test planning artifacts
+specs/*
+!specs/.gitkeep
+
+# OS
+.DS_Store
