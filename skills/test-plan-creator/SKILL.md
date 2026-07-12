@@ -115,10 +115,10 @@ Create test cases for **end-to-end scenarios only** — complete user journeys f
    - **Priority**: derived from Probability × Severity — P1 (critical, score 6–9) | P2 (high, score 4–5) | P3 (medium, score 2–3) | P4 (low, score 1)
    - **Category**: positive | negative | edge case
    - **Pre-conditions**: concrete, reproducible system state or data
-   - **Steps**: numbered list where each step has three lines:
-     - **Step title**: one-line description of what this step does
-     - **Action**: exact action to perform — e.g. click a specific button, navigate to a URL, send `POST /api/orders` with body `{"item": "X", "qty": 2}`
-     - **Expected behavior**: concrete, assertion-level outcome — e.g. response status is `201`, element `#confirmation` is visible, error toast reads "Invalid email"
+   - **Steps**: numbered list where each step has THREE SEPARATE LINES (do not combine on one line):
+     - Line 1 — **Step title**: one-line description of what this step does
+     - Line 2 — **Action**: exact action to perform — e.g. click a specific button, navigate to a URL, send `POST /api/orders` with body `{"item": "X", "qty": 2}`
+     - Line 3 — **Expected result**: concrete, assertion-level outcome — e.g. response status is `201`, element `#confirmation` is visible, error toast reads "Invalid email"
 
 ### Phase 2 Checklist
 - [ ] Every acceptance criterion has at least one test case
@@ -159,10 +159,10 @@ The output has two parts: **1) Test Cases** (summary table + full detail per cas
 **Steps**:
 1. Step title: <what this step does>
    Action: <exact action — e.g. click "Submit" button / send `POST /api/login` with `{"email": "user@example.com", "password": "secret"}`>
-   Expected behavior: <concrete assertion — e.g. response is `200 OK` with `{"token": "..."}` / user is redirected to `/dashboard`>
+   Expected result: <concrete assertion — e.g. response is `200 OK` with `{"token": "..."}` / user is redirected to `/dashboard`>
 2. Step title: ...
    Action: ...
-   Expected behavior: ...
+   Expected result: ...
 
 ## Coverage Matrix
 
@@ -289,7 +289,7 @@ File: `specs/<spec-base-name>-summary.md`
 **Steps**:
 1. Step title: ...
    Action: ...
-   Expected behavior: ...
+   Expected result: ...
 
 ### Coverage Matrix
 
