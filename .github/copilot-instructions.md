@@ -12,3 +12,4 @@ This repository uses a Jira MCP server for AI-assisted Jira access.
 - When a user provides a Jira ticket key, read the ticket before creating a plan or implementing tests.
 - Before writing back to Jira, confirm with the user.
 - Prefer concise comments or summaries over broad field updates unless the user explicitly requests a ticket mutation.
+- Do not commit or push changes to git unless explicitly asked by the user.

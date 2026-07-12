@@ -37,7 +37,7 @@ The spec must be a `.txt` or `.md` file located in the `specs/` folder at the ro
    - Described behaviour that has no corresponding requirement
    - Requirements that lack a clear description or definition of done
    - Missing coverage of: positive behaviour, negative behaviour, edge cases
-5. Build the **Acceptance Criteria List** — one unambiguous criterion per line, derived only from confirmed requirements.
+5. Build the **Acceptance Criteria List** — one unambiguous criterion per line, derived from the spec file requirements only (do not include gap additions yet).
 6. For every gap found, produce a **Suggested Addition** entry with:
    - Category: `positive` | `negative` | `edge case`
    - Severity: 🔴 `Critical` (blocks release) | ⚠️ `Medium` (moderate impact) | ⚠️ `Low` (minor impact)
@@ -70,6 +70,10 @@ web | mobile | both
 - AC-02: <criterion>
 ...
 
+_Note: After the human gate, if the user approves any gap additions, add them to this list with a 📌 marker:_
+- AC-13: 📌 <criterion from approved gap addition>
+- AC-14: 📌 <criterion from approved gap addition>
+
 ### Gaps & Suggested Additions
 
 > 🔴 **CRITICAL GAPS DETECTED**: X critical gap(s) found that may block release. Review and confirm before proceeding.
@@ -86,6 +90,8 @@ _Note: Only show the critical gaps warning line if one or more 🔴 Critical sev
 
 > **Human gate**: Present the output above and ask:
 > _"Does the acceptance criteria list and gap analysis look correct? Should any suggested additions be included as confirmed requirements before I proceed to test case design? Reply **proceed** to continue or provide corrections."_
+>
+> If the user approves any gap additions, update the Acceptance Criteria list by adding them with a 📌 marker to indicate they came from gap analysis (not the original spec file).
 
 ---
 
@@ -237,7 +243,8 @@ For any category scoring below 60 % of its weight, identify the specific gaps an
 ### Steps
 1. Collect the approved output from all three phases.
 2. Create a file named `specs/<spec-base-name>-summary.md`, where `<spec-base-name>` is the spec filename without `.txt` or `.md` (e.g. `checkout.txt` or `checkout.md` becomes `specs/checkout-summary.md`).
-3. Write the full structured summary into the file using the template below.
+3. Copy the "Gaps & Required Revisions" details from Phase 3 evaluation into the "Gaps & Revisions Applied" section of the summary file.
+4. Write the full structured summary into the file using the template below.
 
 ### Phase 4 Output
 
@@ -313,7 +320,19 @@ Icons: 🖐 manual · 🤖 api-automation · 🌐 ui-automation
 | | **Total** | **100** | | | |
 
 ### Gaps & Revisions Applied
-- ...
+
+_Copy the "Gaps & Required Revisions" list from Phase 3 evaluation here. If no gaps were identified (score 75+), state:_
+
+No critical revisions required.
+
+_Then list any suggestions from Phase 3 evaluation:_
+- <Category>: <specific gap description and suggested improvement>
+- <Category>: <specific gap description and suggested improvement>
+...
+
+_If there were no gaps at all, state:_
+
+No gaps identified. All evaluation categories met quality thresholds.
 ```
 
 > Confirm to the user: _"Summary saved to `specs/<spec-base-name>-summary.md`."_
